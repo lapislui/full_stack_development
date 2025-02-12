@@ -38,7 +38,7 @@ This project is a Django-based web application with additional configurations fo
 
 1. **Clone the repository:**
      ```sh
-     git clone [<repository-url>](https://github.com/lapislui/full_stack_development)
+     git clone https://github.com/lapislui/full_stack_development
      cd Codage_Heritage
      ```
 
