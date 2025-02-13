@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            background-color: #f3f3f3;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            display: inline-block;
+            text-align: left;
+        }
+        h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .error {
+            font-size: 100px;
+            font-weight: bold;
+            color: #ff6f61;
+        }
+        .joke {
+            font-size: 18px;
+            color: #555;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error">404</div>
+        <h1>Page Not Found</h1>
+        <p>Oops! It looks like you've taken a wrong turn.</p>
+        <p class="joke" id="joke">Loading a joke...</p>
+        <a href="/" class="button">Go Home</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('https://official-joke-api.appspot.com/random_joke')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('joke').innerText = `${data.setup} - ${data.punchline}`;
+                })
+                .catch(error => {
+                    document.getElementById('joke').innerText = 'Sorry, no jokes available right now.';
+                });
+        });
+    </script>
+</body>
+</html>
