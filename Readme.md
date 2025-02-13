@@ -1,4 +1,4 @@
-# Codage Heritage Project
+# Full Stack Learning
 
 ## Overview
 
@@ -38,7 +38,7 @@ This project is a Django-based web application with additional configurations fo
 
 1. **Clone the repository:**
      ```sh
-     git clone <repository-url>
+     git clone https://github.com/lapislui/full_stack_development
      cd Codage_Heritage
      ```
 
