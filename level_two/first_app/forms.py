@@ -7,4 +7,4 @@ from django import forms
 
 class FormName(forms.Form):
     
-    topic = forms.CharField(widget=forms.Textarea)
+    Topic = forms.CharField(widget=forms.Textarea)
