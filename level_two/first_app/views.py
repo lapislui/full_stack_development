@@ -31,3 +31,7 @@ def form_name_view(request):
             print("Topic is: " + form.cleaned_data['Topic'])
 
     return render(request, 'first_app/form.html', {'form': form})
+def users(request):
+    users_list = Webpage.objects.order_by('name')
+    user_dict = {'users': users_list}
+    return render(request, 'first_app/users.html', context=user_dict)
