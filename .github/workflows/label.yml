@@ -14,9 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      issues: write
       pull-requests: write
 
     steps:
     - uses: actions/labeler@v4
       with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        repo-token: "${{ secrets.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 }}"
