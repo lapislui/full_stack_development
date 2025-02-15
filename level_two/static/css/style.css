@@ -25,7 +25,7 @@ header h1 {
 }
 
 main {
-    padding: 2rem;
+    padding: 6rem 2rem 2rem 2rem; /* Add top padding to account for the fixed header */
 }
 
 main p {
@@ -60,4 +60,32 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20rem auto; /* Adjusted margin to ensure form is visible below header */
+}
+
+form h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background: #555;
 }
