@@ -1,0 +1,42 @@
+# This is the configuration file for the GitHub Labeler workflow.
+# It automatically labels pull requests based on the files changed.
+
+# Define label rules
+labels:
+  - label: "backend"
+    paths:
+      - "first_tutorial_project/**"
+      - "level_two/**"
+
+  - label: "frontend"
+    paths:
+      - "django_project/trial/**"
+
+  - label: "documentation"
+    paths:
+      - "*.md"
+      - "docs/**"
+
+  - label: "workflow"
+    paths:
+      - ".github/workflows/**"
+
+  - label: "configuration"
+    paths:
+      - "**/*.yml"
+      - "**/*.yaml"
+      - "**/*.json"
+      - "**/*.xml"
+
+  - label: "tests"
+    paths:
+      - "tests/**"
+      - "**/test_*.py"
+
+  - label: "dependencies"
+    paths:
+      - "requirements.txt"
+      - "Pipfile"
+      - "Pipfile.lock"
+      - "package.json"
+      - "yarn.lock"
