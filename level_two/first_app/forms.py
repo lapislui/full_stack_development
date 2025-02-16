@@ -8,8 +8,8 @@ from django.core import validators
 class FormName(forms.Form):
     
     Topic = forms.CharField(widget=forms.Textarea)
-    Email = forms.EmailField(label='Enter your email')
-    Vemail = forms.EmailField(label='Verify Email')
+    email = forms.EmailField(label='Enter your email')
+    verify_email = forms.EmailField(label='Verify Email')
     def clean(self):
         all_clean_data = super().clean()
         email = all_clean_data['email']
