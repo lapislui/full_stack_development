@@ -26,7 +26,8 @@ def form_name_view(request):
             # Do something.
             print("Form Validation Success. Prints in console.")
             # print("Name: " + form.cleaned_data['name'])
-            # print("Email: " + form.cleaned_data['email'])
+            print("Email: " + form.cleaned_data['email'])
+            print("Email: " + form.cleaned_data['verify_email'])
             # print("Text: " + form.cleaned_data['text'])
             print("Topic is: " + form.cleaned_data['Topic'])
 
