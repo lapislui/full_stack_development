@@ -11,6 +11,14 @@ class FormName(forms.Form):
     Topic = forms.CharField(widget=forms.Textarea)
     email = forms.EmailField(label='Enter your email')
     verify_email = forms.EmailField(label='Verify Email')
+    Password = forms.CharField(widget=forms.PasswordInput)
+    Verify_Password = forms.CharField(widget=forms.PasswordInput)
+
+    botcatcher = forms.CharField(required=False,
+                                widget=forms.HiddenInput,
+                                validators=[validators.MaxLengthValidator(
+                                    0
+                                )])
     def clean(self):
         all_clean_data = super().clean()
         email = all_clean_data['email']
@@ -20,6 +28,14 @@ class FormName(forms.Form):
             raise forms.ValidationError("Make sure emails match!")
     
 class NewUserForm(forms.ModelForm):
+    
+    all_clean_data = super().clean()
+    password = all_clean_data['password']
+    verify_password = all_clean_data['verify_password']
+
+    if password != verify_password:
+        raise forms.ValidationError("Make sure passwords match!")
+    
     class Meta():
         model = User
         fields = '__all__'
