@@ -1,5 +1,6 @@
 from django import forms
 from django.core import validators
+from first_app.models import User
 # class FormName(forms.Form):
 #     name = forms.CharField()
 #     email = forms.EmailField()
@@ -17,3 +18,9 @@ class FormName(forms.Form):
         
         if email != vmail:
             raise forms.ValidationError("Make sure emails match!")
+    
+class NewUserForm(forms.ModelForm):
+    class Meta():
+        model = User
+        fields = '__all__'
+    

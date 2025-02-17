@@ -2,7 +2,7 @@ from django.shortcuts import render
 from first_app.models import AccessRecord, Topic, Webpage
 from django.utils.safestring import mark_safe
 from . import forms # Import the forms.py file from the same directory.
-
+from first_app.models import User
 # Create your views here.
 def index(request):
     webpages_list = AccessRecord.objects.order_by('date')
@@ -36,3 +36,14 @@ def users(request):
     users_list = Webpage.objects.order_by('name')
     user_dict = {'users': users_list}
     return render(request, 'first_app/users.html', context=user_dict)
+
+def userform(request):
+    form = forms.NewUserForm()
+    if request.method == 'POST':
+        form = forms.NewUserForm(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return index(request)
+        else:
+            print('ERROR FORM INVALID')
+    return render(request, 'first_app/userform.html', {'form': form})
