@@ -13,6 +13,13 @@
 <body>
     <header>
         <h1>Welcome to the index App</h1>
+        <nav>
+                <a href="{% url 'first_app:index' %}">Home</a>
+                <a href="{% url 'first_app:form_name_view' %}">Form</a>
+                <a href="{% url 'first_app:users' %}">Users</a>
+                <a href="{% url 'first_app:userform' %}">User Form</a>
+                <a href="{% url 'admin:index' %}">Admin</a>
+        </nav>
     </header>
     <main>
         <p>This is the main content of the app.</p>
