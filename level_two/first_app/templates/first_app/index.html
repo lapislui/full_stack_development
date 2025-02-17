@@ -4,8 +4,9 @@
 {% block title %}Index - First App{% endblock %}
 
 {% block content %}
+<br>
 <p>This is the main content of the app.</p>
-<!-- <h2>adding dict itms: {{ my_variable }}</h2> -->
+<p>adding dict itms:{{ my_variable|cut:'Hello, world. ' }}</p>
 <div class="djangotwo">
     {% if access_records %}
     <table>
@@ -26,4 +27,6 @@
     <p>No access records found</p>
     {% endif %}
 </div>
+<br>
+<br>
 {% endblock %}

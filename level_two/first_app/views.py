@@ -7,7 +7,7 @@ from first_app.models import User
 def index(request):
     webpages_list = AccessRecord.objects.order_by('date')
     date_dict = {'access_records': webpages_list}
-    my_dict = {'my_variable': mark_safe("<h1>Hello, world. You're at the <b>first_tutorial_project</b> index.</h1>")}
+    my_dict = {'my_variable': mark_safe("<p>Hello, world. You're at the <b>Level_Two_project</b> index.</p>")}
     
     # Combine both dictionaries
     context = {**date_dict, **my_dict}
