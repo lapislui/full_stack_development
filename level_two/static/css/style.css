@@ -159,7 +159,7 @@ form {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    margin: 20rem auto; /* Adjusted margin to ensure form is visible below header */
+    margin: 0 auto; /* Center the form without extra space */
 }
 
 form h1 {

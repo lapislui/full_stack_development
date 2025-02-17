@@ -1,23 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Form Page</title>
-    <!-- <link rel="stylesheet" type="t ext/css" href="{% static 'css/style.css' %}"> -->
-</head>
-<body>
-    <header>
-        <h1>Form Page</h1>
-    </header>
-    <main>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-    <footer>
-        <p>Footer content here</p>
-    </footer>
-</body>
-</html>
+{% extends 'first_app/base.html' %}
+
+{% block title %}Form Page{% endblock %}
+
+{% block content %}
+    <h1>Form Page</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
