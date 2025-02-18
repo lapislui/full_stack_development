@@ -29,6 +29,8 @@ def form_name_view(request):
             print("Email: " + form.cleaned_data['email'])
             print("Email: " + form.cleaned_data['verify_email'])
             # print("Text: " + form.cleaned_data['text'])
+            print("Password: " + form.cleaned_data['Password'])
+            print("Verify Password: " + form.cleaned_data['Verify_Password'])
             print("Topic is: " + form.cleaned_data['Topic'])
 
     return render(request, 'first_app/form.html', {'form': form})
@@ -37,13 +39,13 @@ def users(request):
     user_dict = {'users': users_list}
     return render(request, 'first_app/users.html', context=user_dict)
 
-def userform(request):
-    form = forms.NewUserForm()
-    if request.method == 'POST':
-        form = forms.NewUserForm(request.POST)
-        if form.is_valid():
-            form.save(commit=True)
-            return index(request)
-        else:
-            print('ERROR FORM INVALID')
-    return render(request, 'first_app/userform.html', {'form': form})
+# def userform(request):
+#     form = forms.NewUserForm()
+#     if request.method == 'POST':
+#         form = forms.NewUserForm(request.POST)
+#         if form.is_valid():
+#             form.save(commit=True)
+#             return index(request)
+#         else:
+#             print('ERROR FORM INVALID')
+#     return render(request, 'first_app/userform.html', {'form': form})

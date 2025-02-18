@@ -23,20 +23,28 @@ class FormName(forms.Form):
         all_clean_data = super().clean()
         email = all_clean_data['email']
         vmail = all_clean_data['verify_email']
+        password = all_clean_data['Password']
+        vpassword = all_clean_data['Verify_Password']
+
+        if password != vpassword:
+            raise forms.ValidationError("Make sure passwords match!")
         
         if email != vmail:
             raise forms.ValidationError("Make sure emails match!")
     
-class NewUserForm(forms.ModelForm):
+# class NewUserForm(forms.ModelForm):
     
-    all_clean_data = super().clean()
-    password = all_clean_data['password']
-    verify_password = all_clean_data['verify_password']
+   
+    
+#     class Meta():
+#         model = User
+#         fields = '__all__'
+        
+#     def clean(self):
+#         all_clean_data = super().clean()
+#         password = all_clean_data['password']
+#         verify_password = all_clean_data['verify_password']
 
-    if password != verify_password:
-        raise forms.ValidationError("Make sure passwords match!")
-    
-    class Meta():
-        model = User
-        fields = '__all__'
+#         if password != verify_password:
+#             raise forms.ValidationError("Make sure passwords match!")
     
